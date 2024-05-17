@@ -1,0 +1,42 @@
+[
+  {
+    "foodName": "蒜蓉西兰花",
+    "foodPrice": 27
+  },
+  {
+    "foodName": "东坡肉",
+    "foodPrice": 69
+  },
+  {
+    "foodName": "冰淇淋",
+    "foodPrice": 67
+  },
+  {
+    "foodName": "鱼香茄子",
+    "foodPrice": 47
+  },
+  {
+    "foodName": "提拉米苏",
+    "foodPrice": 60
+  },
+  {
+    "foodName": "酸菜炖排骨",
+    "foodPrice": 67
+  },
+  {
+    "foodName": "糖醋鲤鱼",
+    "foodPrice": 66
+  },
+  {
+    "foodName": "蒜泥白肉",
+    "foodPrice": 60
+  },
+  {
+    "foodName": "马卡龙",
+    "foodPrice": 41
+  },
+  {
+    "foodName": "清蒸鲈鱼",
+    "foodPrice": 20
+  }
+]
