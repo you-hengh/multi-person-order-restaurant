@@ -13,7 +13,13 @@ const openModal = (table: number) => {
 <template>
   <main class="home-view">
     <h1>多人点餐后台管理点餐台</h1>
-    <div class="hv-grid" v-for="table in tables" :key="table" @click="openModal(table)">
+    <div
+      class="hv-grid"
+      tabindex="0"
+      v-for="table in tables"
+      :key="table"
+      @click="openModal(table)"
+    >
       {{ table }}号桌
     </div>
     <article v-if="modalVisible" title="点餐台详情" @click="modalVisible = false">
@@ -44,11 +50,13 @@ const openModal = (table: number) => {
     border-radius: 0.3rem;
     background: var(--color-background-mute);
     padding: 2rem;
-    box-shadow: inset 0 0 20px 10px #0c40bab0;
     font-size: 3em;
     transition: background 0.3s;
-    &:hover {
+    &:focus {
       background: #2f70e0;
+    }
+    &:hover {
+      background: rgba(47, 112, 224, 0.3);
     }
   }
   h1 {
@@ -56,7 +64,7 @@ const openModal = (table: number) => {
     font-weight: bolder;
     align-content: center;
     text-align: center;
-    background: #0c40bab0;
+    background: var(--color-background-mute);
     grid-column: span 4;
   }
   article {
@@ -74,7 +82,7 @@ const openModal = (table: number) => {
       display: grid;
       padding: 2rem;
       border-radius: 0.3rem;
-      background: #2f70e0;
+      background: var(--color-background-mute);
       grid-template-columns: repeat(3, minmax(max-content, 1fr));
       grid-template-areas:
         '. . close'
