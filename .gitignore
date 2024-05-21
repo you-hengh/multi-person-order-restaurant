@@ -1,3 +1,4 @@
 node_modules
 pnpm-lock.yaml
 client/components.d.ts
+auto-imports.d.ts
