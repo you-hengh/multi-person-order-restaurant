@@ -31,9 +31,8 @@ jobs:
           REMOTE_USER: 'root'
           # 目标地址
           TARGET: '/var/www/api/multi-person-order-restaurant'
-
-      - name: 安装开发依赖
-        run: ssh root@${{ secrets.REMOTE_TXHOST }} 'cd /var/www/api/multi-person-order-restaurant && pnpm install'
-
-      - name: 重启服务
-        run: ssh root@${{ secrets.REMOTE_TXHOST }} 'cd /var/www/api/multi-person-order-restaurant && pm2 restart  app.js'
+          # 后置命令
+          SCRIPT_AFTER: |
+            cd /var/www/api/multi-person-order-restaurant
+            pnpm install
+            pm2 restart app.js
