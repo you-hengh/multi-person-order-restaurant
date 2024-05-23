@@ -35,4 +35,3 @@ jobs:
           SCRIPT_AFTER: |
             cd /var/www/api/multi-person-order-restaurant
             pnpm install
-            pm2 restart app.js
