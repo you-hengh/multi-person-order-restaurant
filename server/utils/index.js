@@ -1,49 +1,49 @@
-import fs from 'fs-extra'
-import path from 'node:path'
+import fs from 'fs-extra';
+import path from 'node:path';
 
-const userDataPath = path.join(import.meta.dirname, '../database/user.json')
-const menuDataPath = path.join(import.meta.dirname, '../database/menu.json')
+const userDataPath = path.join(import.meta.dirname, '../database/user.json');
+const menuDataPath = path.join(import.meta.dirname, '../database/menu.json');
 
-let userDataCache = null // 用户名缓存
-let menuDataCache = null // 菜单缓存
+let userDataCache = null; // 用户名缓存
+let menuDataCache = null; // 菜单缓存
 
 export const getName = () => {
   // 判断是否有数据缓存,没有则读取数据,有缓存则直接用缓存
   if (userDataCache === null) {
     try {
       // 获取用户名
-      userDataCache = fs.readJsonSync(userDataPath)
+      userDataCache = fs.readJsonSync(userDataPath);
       // 返回数据第一个元素,并删除第一个元素
-      return userDataCache.shift()
+      return userDataCache.shift();
     } catch (error) {
-      console.error(`${import.meta.filename}:${error}`)
-      return null
+      console.error(`${import.meta.filename}:${error}`);
+      return null;
     }
   } else {
     // 返回数据第一个元素,并删除第一个元素
-    return userDataCache.shift()
+    return userDataCache.shift();
   }
-}
+};
 
 export const getMenu = () => {
   if (menuDataCache === null) {
     try {
-      menuDataCache = fs.readJsonSync(menuDataPath) || {}
-      return menuDataCache
+      menuDataCache = fs.readJsonSync(menuDataPath) || {};
+      return menuDataCache;
     } catch (error) {
-      console.error(`${import.meta.filename}:${error}`)
-      return null
+      console.error(`${import.meta.filename}:${error}`);
+      return null;
     }
   } else {
-    return menuDataCache
+    return menuDataCache;
   }
-}
+};
 
 // 如果需要清空缓存，可以提供以下函数
 export const clearCache = () => {
-  cachedUserData = null
-  cachedMenuData = null
-}
+  cachedUserData = null;
+  cachedMenuData = null;
+};
 
 // {
 //   "1" : [
