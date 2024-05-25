@@ -1,15 +1,20 @@
 <template>
   <div class="wrapper">
     <div class="title">桌号： 888 订单</div>
-    <div class="list-box">
-      <div v-for="item in 20" :key="item" class="list-item">
-        <div class="img">菜品图片</div>
-        <div class="info">
-          <span class="one-row-text">
-            菜名菜名菜名菜名菜名菜名菜名菜名菜名菜名菜名菜名菜名菜名菜名菜名菜名菜名菜名菜名菜名
-          </span>
-          <span>￥<strong>188.88</strong></span>
-          <span>*1</span>
+    <div class="list-wrapper">
+      <div class="list-box">
+        <div v-for="item in 20" :key="item" class="list-item">
+          <div class="img">菜品图片</div>
+          <div class="info">
+            <span class="one-row-text">
+              菜名菜名菜名菜名菜名菜名菜名菜名菜名菜名菜名菜名菜名菜名菜名菜名菜名菜名菜名菜名菜名
+            </span>
+            <span>
+              ￥
+              <strong>188.88</strong>
+            </span>
+            <span>*1</span>
+          </div>
         </div>
       </div>
     </div>
@@ -32,7 +37,7 @@ $themeColor: #673ab7;
 .wrapper {
   padding: 10px;
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 44px);
   box-sizing: border-box;
   overflow: hidden;
   font-size: 14px;
@@ -46,42 +51,50 @@ $themeColor: #673ab7;
     justify-self: center;
     font-size: 20px;
     font-weight: bold;
+    // background: linear-gradient(to right bottom, #b39ddb, #d1c4e9, #ede7f6);
+    width: 100%;
+    border-bottom: 1px solid $themeColor;
+    border-color: linear-gradient(to right bottom, #b39ddb, #d1c4e9, #ede7f6)
   }
 
-  .list-box {
-    width: 100%;
-    box-sizing: border-box;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
+  .list-wrapper {
+    padding: 20px 0;
     overflow-y: auto;
 
-    .list-item {
+    .list-box {
+      width: 100%;
+      box-sizing: border-box;
+      overflow: hidden;
       display: flex;
-      border: 1px solid $themeColor;
-      border-radius: 6px;
-      background: linear-gradient(to right bottom, #b39ddb, #d1c4e9, #ede7f6);
+      flex-direction: column;
 
-      &:not(:last-child) {
-        margin-bottom: 10px;
-      }
-
-      .img {
-        width: 100px;
-        height: 100px;
-        border-radius: 6px;
-        background-color: $themeColor;
-      }
-
-      .info {
-        width: 62vw;
-        padding: 0 20px;
+      .list-item {
         display: flex;
-        flex-direction: column;
-        justify-content: space-around;
+        border: 1px solid $themeColor;
+        border-radius: 6px;
+        background: linear-gradient(to right bottom, #b39ddb, #d1c4e9, #ede7f6);
 
-        strong {
-          font-size: 18px;
+        &:not(:last-child) {
+          margin-bottom: 10px;
+        }
+
+        .img {
+          width: 100px;
+          height: 100px;
+          border-radius: 6px;
+          background-color: $themeColor;
+        }
+
+        .info {
+          width: 62vw;
+          padding: 0 20px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+
+          strong {
+            font-size: 18px;
+          }
         }
       }
     }
