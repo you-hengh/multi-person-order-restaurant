@@ -1,0 +1,20 @@
+.ordering-station {
+  width: 100%;
+  height: calc(100% - var(--mat-toolbar-standard-height));
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.grid-container {
+  flex: 1;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.mat-mdc-card {
+  box-shadow: 2px 2px 0px 5px #673ab7;
+}
+.mdc-card__actions {
+  margin-top: auto;
+}
