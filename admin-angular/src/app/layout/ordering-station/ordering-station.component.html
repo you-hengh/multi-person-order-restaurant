@@ -1,0 +1,16 @@
+<div class="ordering-station">
+  <h1 class="mat-h1">点餐台</h1>
+  <div class="grid-container">
+    @for (item of tableStatus; track item.tableId) {
+    <mat-card>
+      <mat-card-header color="accent">
+        <mat-card-title>餐桌{{ item.tableId }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-actions align="start">
+        <button mat-button color="accent">查看详情</button>
+        <button mat-button color="accent">线上结账</button>
+      </mat-card-actions>
+    </mat-card>
+    }
+  </div>
+</div>

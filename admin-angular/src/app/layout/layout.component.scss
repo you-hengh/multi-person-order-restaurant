@@ -1,0 +1,19 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+  border: 1px solid #673ab7;
+  border-left: none;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.right-toolbar {
+  border-bottom: 1px solid #673ab7;
+}

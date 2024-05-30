@@ -10,6 +10,7 @@ import vue from "@vitejs/plugin-vue";
 export default defineConfig({
   server: {
     open: true,
+    host: true
   },
   plugins: [
     vue(),

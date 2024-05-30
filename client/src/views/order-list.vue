@@ -1,21 +1,25 @@
 <template>
   <div class="wrapper">
-    <div class="title">桌号： 888 订单</div>
-    <div class="list-box">
-      <div v-for="item in 20" :key="item" class="list-item">
-        <div class="img">菜品图片</div>
-        <div class="info">
-          <span class="one-row-text">
-            菜名菜名菜名菜名菜名菜名菜名菜名菜名菜名菜名菜名菜名菜名菜名菜名菜名菜名菜名菜名菜名
+    <div class="list-wrapper">
+      <div class="title">桌号： 888</div>
+      <div class="list-box">
+        <div v-for="item in 20" :key="item" class="list-item">
+          <div class="img">菜品图片</div>
+          <div class="info">
+            <span class="one-row-text">
+              菜名菜名菜名菜名菜名菜名菜名菜名菜名菜名菜名菜名菜名菜名菜名菜名菜名菜名菜名菜名菜名
+            </span>
+            <span class="fs12">x1</span>
+          </div>
+          <span class="price">
+            ￥
+            <strong>188.88</strong>
           </span>
-          <span>￥<strong>188.88</strong></span>
-          <span>*1</span>
         </div>
       </div>
     </div>
     <div class="footer">
-      <div class="next-btn btn">再次点餐</div>
-      <div class="over-btn btn">柜台结账</div>
+      <div class="btn">再次点餐</div>
     </div>
   </div>
 </template>
@@ -29,59 +33,78 @@ $themeColor: #673ab7;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+.fs12 {
+  font-size: 12px;
+}
 .wrapper {
-  padding: 10px;
+  padding: 10px 10px 0;
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - var(--tabs-item-horizontal-height));
   box-sizing: border-box;
   overflow: hidden;
   font-size: 14px;
+  background-color: #efefef;
 
   display: grid;
-  grid-template-rows: 60px 1fr 60px;
+  grid-template-rows: 1fr 60px;
 
-  .title {
-    height: 60px;
-    line-height: 60px;
-    justify-self: center;
-    font-size: 20px;
-    font-weight: bold;
-  }
-
-  .list-box {
-    width: 100%;
-    box-sizing: border-box;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
+  .list-wrapper {
     overflow-y: auto;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px;
 
-    .list-item {
+    .title {
+      height: 40px;
+      line-height: 40px;
+      justify-self: center;
+      font-size: 20px;
+      font-weight: bold;
+      width: 100%;
+      border-bottom: 1px solid #efefef;
+      margin-bottom: 10px;
+    }
+
+    // 更改滚动条样式
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .list-box {
+      width: 100%;
+      box-sizing: border-box;
+      overflow: hidden;
       display: flex;
-      border: 1px solid $themeColor;
-      border-radius: 6px;
-      background: linear-gradient(to right bottom, #b39ddb, #d1c4e9, #ede7f6);
+      flex-direction: column;
 
-      &:not(:last-child) {
-        margin-bottom: 10px;
-      }
-
-      .img {
-        width: 100px;
-        height: 100px;
-        border-radius: 6px;
-        background-color: $themeColor;
-      }
-
-      .info {
-        width: 62vw;
-        padding: 0 20px;
+      .list-item {
         display: flex;
-        flex-direction: column;
-        justify-content: space-around;
+        border-radius: 6px;
 
-        strong {
-          font-size: 18px;
+        &:not(:last-child) {
+          margin-bottom: 20px;
+        }
+
+        .img {
+          width: 60px;
+          height: 60px;
+          border-radius: 3px;
+          background-color: $themeColor;
+        }
+
+        .info {
+          max-width: 62vw;
+          box-sizing: border-box;
+          padding: 0 20px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          height: 60px;
+          font-size: 14px;
+        }
+
+        .price {
+          display: flex;
         }
       }
     }
@@ -89,7 +112,7 @@ $themeColor: #673ab7;
 
   .footer {
     width: 100%;
-    padding: 10px;
+    padding: 10px 10px 0;
     justify-self: center;
     display: flex;
     justify-content: space-around;
@@ -99,16 +122,9 @@ $themeColor: #673ab7;
       text-align: center;
       line-height: 40px;
       height: 40px;
-      width: 180px;
       color: #fff;
-    }
-
-    .next-btn {
+      flex: 1;
       background-color: #b388ff;
-    }
-
-    .over-btn {
-      background-color: $themeColor;
     }
   }
 }
