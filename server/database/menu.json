@@ -1,42 +1,32 @@
 [
   {
-    "foodName": "蒜蓉西兰花",
-    "foodPrice": 27
+    "menuLabel": "脆皮鸡饭",
+    "menuId": 1,
+    "menuList": [
+      { "footID": "001", "foodName": "麻辣脆皮鸡饭", "foodPrice": "14.66" },
+      { "footID": "002", "foodName": "泰式甜辣脆皮鸡饭", "foodPrice": "14.66" },
+      { "footID": "003", "foodName": "沙拉脆皮鸡饭", "foodPrice": "14.66" },
+      { "footID": "004", "foodName": "黑椒脆皮鸡饭", "foodPrice": "14.66" }
+    ]
   },
   {
-    "foodName": "东坡肉",
-    "foodPrice": 69
+    "menuLabel": "烤肉饭",
+    "menuId": 2,
+    "menuList": [
+      { "footID": "005", "foodName": "麻辣烤肉饭", "foodPrice": "14.66" },
+      { "footID": "006", "foodName": "蜜汁烤肉饭", "foodPrice": "14.66" },
+      { "footID": "007", "foodName": "泰式甜辣烤肉饭", "foodPrice": "14.66" },
+      { "footID": "008", "foodName": "黑椒烤肉饭", "foodPrice": "14.66" }
+    ]
   },
   {
-    "foodName": "冰淇淋",
-    "foodPrice": 67
-  },
-  {
-    "foodName": "鱼香茄子",
-    "foodPrice": 47
-  },
-  {
-    "foodName": "提拉米苏",
-    "foodPrice": 60
-  },
-  {
-    "foodName": "酸菜炖排骨",
-    "foodPrice": 67
-  },
-  {
-    "foodName": "糖醋鲤鱼",
-    "foodPrice": 66
-  },
-  {
-    "foodName": "蒜泥白肉",
-    "foodPrice": 60
-  },
-  {
-    "foodName": "马卡龙",
-    "foodPrice": 41
-  },
-  {
-    "foodName": "清蒸鲈鱼",
-    "foodPrice": 20
+    "menuLabel": "双拼饭",
+    "menuId": 3,
+    "menuList": [
+      { "footID": "009", "foodName": "蜜汁(烤肉+脆皮鸡)饭", "foodPrice": "16.99" },
+      { "footID": "010", "foodName": "孜然(烤肉+脆皮鸡)饭", "foodPrice": "16.99" },
+      { "footID": "011", "foodName": "沙拉(烤肉+脆皮鸡)饭", "foodPrice": "16.99" },
+      { "footID": "012", "foodName": "麻辣(烤肉+脆皮鸡)饭", "foodPrice": "16.99" }
+    ]
   }
 ]

@@ -1,12 +1,62 @@
-[
-  { "tableID": 1, "tableStatus": 0 },
-  { "tableID": 2, "tableStatus": 0 },
-  { "tableID": 3, "tableStatus": 0 },
-  { "tableID": 4, "tableStatus": 0 },
-  { "tableID": 5, "tableStatus": 0 },
-  { "tableID": 6, "tableStatus": 0 },
-  { "tableID": 7, "tableStatus": 0 },
-  { "tableID": 8, "tableStatus": 0 },
-  { "tableID": 9, "tableStatus": 0 },
-  { "tableID": 10, "tableStatus": 0 }
-]
+{
+  "1": {
+    "status": "空闲",
+    "orderID": "",
+    "realOrderId": "",
+    "seatNumber": ["1号", "2号", "3号", "4号", "5号", "6号", "7号", "8号"]
+  },
+  "2": {
+    "status": "空闲",
+    "orderID": "",
+    "realOrderId": "",
+    "seatNumber": ["1号", "2号", "3号", "4号", "5号", "6号", "7号", "8号"]
+  },
+  "3": {
+    "status": "空闲",
+    "orderID": "",
+    "realOrderId": "",
+    "seatNumber": ["1号", "2号", "3号", "4号", "5号", "6号", "7号", "8号"]
+  },
+  "4": {
+    "status": "空闲",
+    "orderID": "",
+    "realOrderId": "",
+    "seatNumber": ["1号", "2号", "3号", "4号", "5号", "6号", "7号", "8号"]
+  },
+  "5": {
+    "status": "空闲",
+    "orderID": "",
+    "realOrderId": "",
+    "seatNumber": ["1号", "2号", "3号", "4号", "5号", "6号", "7号", "8号"]
+  },
+  "6": {
+    "status": "空闲",
+    "orderID": "",
+    "realOrderId": "",
+    "seatNumber": ["1号", "2号", "3号", "4号", "5号", "6号", "7号", "8号"]
+  },
+  "7": {
+    "status": "空闲",
+    "orderID": "",
+    "realOrderId": "",
+    "seatNumber": ["1号", "2号", "3号", "4号", "5号", "6号", "7号", "8号"]
+  },
+  "8": {
+    "status": "空闲",
+    "orderID": "",
+    "realOrderId": "",
+    "seatNumber": ["1号", "2号", "3号", "4号", "5号", "6号", "7号", "8号"]
+  },
+  "9": {
+    "status": "空闲",
+    "orderID": "",
+    "realOrderId": "",
+    "seatNumber": ["1号", "2号", "3号", "4号", "5号", "6号", "7号", "8号"]
+  },
+  "10": {
+    "status": "空闲",
+    "orderID": "",
+    "realOrderId": "",
+    "seatNumber": ["1号", "2号", "3号", "4号", "5号", "6号", "7号", "8号"]
+  }
+}
