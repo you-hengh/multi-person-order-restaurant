@@ -1,40 +1,58 @@
-import express from 'express';
-import expressWs from 'express-ws';
-import path from 'node:path';
-
-// import https from 'node:https';
-// import http2 from 'node:http2'
-// import fs from 'fs-extra';
-import router from './routers/index.js';
-
-const app = express();
-
-// 读取SSL证书和私钥
-// const options = {
-//   key: fs.readFileSync('/etc/nginx/certs/api/api.bddxg.top.key'),
-//   cert: fs.readFileSync('/etc/nginx/certs/api/api.bddxg.top.pem'),
-// };
-
-// const httpsServer = https.createServer(options);
-// const httpsServer = http2.createSecureServer(options)  // 使用http2建立链接失败,原因未知
-// 将 WebSocket 服务混入 app，相当于为 app 添加 .ws 方法
-expressWs(app);
-// expressWs(app, httpsServer);
-
-// 加载中间件,使express可以解析json、表单请求和静态资源
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(import.meta.dirname, 'public')));
-
-// 路由模块
-app.use('/restaurant', router);
-
-app.listen(3000, () => {
-  console.log('服务已启动: http://localhost:3000');
-});
-
-// 启动 HTTP/2 服务器并监听端口
-// httpsServer.on('request', app);
-// httpsServer.listen(3000, () => {
-//   console.log('服务已启动: https://localhost:3000');
+import fastify from 'fastify';
+import fastifyPlugin from 'fastify-plugin';
+// 初始化配置
+// export const server = fastify({
+//   logger: {
+//     transport: {
+//       target: 'pino-pretty',
+//       options: {
+//         translateTime: 'SYS:HH:MM:ss',
+//         ignore: 'pid,hostname',
+//       },
+//     },
+//   },
 // });
+export const server = fastify();
+// 创建一个插件来管理全局状态
+// async function globalStatePlugin(fastify, options) {
+//   // 订单页详情
+//   const orderDetails = {};
+//   fastify.decorate('orderDetails', orderDetails);
+
+//   fastify.decorate('updateOrderDetails', data => {
+//     fastify.orderDetails = data;
+//   });
+//   // 购物车详情
+//   const realOrderDetails = {
+//     realOrderId: '',
+//   };
+//   fastify.decorate('realOrderDetails', realOrderDetails);
+
+//   fastify.decorate('updateRealOrderDetails', data => {
+//     fastify.realOrderDetails = data;
+//   });
+//   // 餐桌状态缓存
+//   const tableStatusCache = {};
+
+//   fastify.decorate('tableStatusCache', tableStatusCache);
+
+//   fastify.decorate('updateTableStatusCache', data => {
+//     fastify.tableStatusCache = data;
+//   });
+// }
+// 使用 fastify-plugin 来包装插件
+// const globalState = fastifyPlugin(globalStatePlugin);
+// const server = fastify();
+// 注册插件
+server.register(import('@fastify/websocket'));
+// server.register(globalState);
+// 路由模块
+server.register(import('./routes/ws.js'));
+server.register(import('./routes/admin.js'));
+// 启动服务
+server.listen({ port: 3000, host: '127.0.0.1' }, (err, address) => {
+  if (err) {
+    server.log.error(err, address);
+    process.exit(1);
+  }
+});
