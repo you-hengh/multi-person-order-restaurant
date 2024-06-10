@@ -1,32 +1,74 @@
-[
-  {
-    "menuLabel": "脆皮鸡饭",
-    "menuId": 1,
-    "menuList": [
-      { "foodID": "001", "foodName": "麻辣脆皮鸡饭", "foodPrice": 14.66 },
-      { "foodID": "002", "foodName": "泰式甜辣脆皮鸡饭", "foodPrice": 14.66 },
-      { "foodID": "003", "foodName": "沙拉脆皮鸡饭", "foodPrice": 14.66 },
-      { "foodID": "004", "foodName": "黑椒脆皮鸡饭", "foodPrice": 14.66 }
-    ]
+{
+  "001": {
+    "foodName": "麻辣脆皮鸡饭",
+    "foodPrice": 14.66,
+    "menugroup": "脆皮鸡饭",
+    "menuId": 1
   },
-  {
-    "menuLabel": "烤肉饭",
-    "menuId": 2,
-    "menuList": [
-      { "foodID": "005", "foodName": "麻辣烤肉饭", "foodPrice": 14.66 },
-      { "foodID": "006", "foodName": "蜜汁烤肉饭", "foodPrice": 14.66 },
-      { "foodID": "007", "foodName": "泰式甜辣烤肉饭", "foodPrice": 14.66 },
-      { "foodID": "008", "foodName": "黑椒烤肉饭", "foodPrice": 14.66 }
-    ]
+  "002": {
+    "foodName": "泰式甜辣脆皮鸡饭",
+    "foodPrice": 14.66,
+    "menugroup": "脆皮鸡饭",
+    "menuId": 1
   },
-  {
-    "menuLabel": "双拼饭",
-    "menuId": 3,
-    "menuList": [
-      { "foodID": "009", "foodName": "蜜汁(烤肉+脆皮鸡)饭", "foodPrice": 16.99 },
-      { "foodID": "010", "foodName": "孜然(烤肉+脆皮鸡)饭", "foodPrice": 16.99 },
-      { "foodID": "011", "foodName": "沙拉(烤肉+脆皮鸡)饭", "foodPrice": 16.99 },
-      { "foodID": "012", "foodName": "麻辣(烤肉+脆皮鸡)饭", "foodPrice": 16.99 }
-    ]
+  "003": {
+    "foodName": "沙拉脆皮鸡饭",
+    "foodPrice": 14.66,
+    "menugroup": "脆皮鸡饭",
+    "menuId": 1
+  },
+  "004": {
+    "foodName": "黑椒脆皮鸡饭",
+    "foodPrice": 14.66,
+    "menugroup": "脆皮鸡饭",
+    "menuId": 1
+  },
+  "005": {
+    "foodName": "麻辣烤肉饭",
+    "foodPrice": 14.66,
+    "menugroup": "烤肉饭",
+    "menuId": 2
+  },
+  "006": {
+    "foodName": "蜜汁烤肉饭",
+    "foodPrice": 14.66,
+    "menugroup": "烤肉饭",
+    "menuId": 2
+  },
+  "007": {
+    "foodName": "泰式甜辣烤肉饭",
+    "foodPrice": 14.66,
+    "menugroup": "烤肉饭",
+    "menuId": 2
+  },
+  "008": {
+    "foodName": "黑椒烤肉饭",
+    "foodPrice": 14.66,
+    "menugroup": "烤肉饭",
+    "menuId": 2
+  },
+  "009": {
+    "foodName": "蜜汁(烤肉+脆皮鸡)饭",
+    "foodPrice": 14.66,
+    "menugroup": "双拼饭",
+    "menuId": 3
+  },
+  "010": {
+    "foodName": "孜然(烤肉+脆皮鸡)饭",
+    "foodPrice": 14.66,
+    "menugroup": "双拼饭",
+    "menuId": 3
+  },
+  "011": {
+    "foodName": "沙拉(烤肉+脆皮鸡)饭",
+    "foodPrice": 14.66,
+    "menugroup": "双拼饭",
+    "menuId": 3
+  },
+  "012": {
+    "foodName": "麻辣(烤肉+脆皮鸡)饭",
+    "foodPrice": 14.66,
+    "menugroup": "双拼饭",
+    "menuId": 3
   }
-]
+}
