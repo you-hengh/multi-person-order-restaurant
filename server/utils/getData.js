@@ -1,5 +1,6 @@
 import { nanoid } from 'nanoid';
-import menuData from '../database/menu_copy.json' assert { type: 'json' };
+import Decimal from 'decimal.js';
+import menuData from '../database/menu.json' assert { type: 'json' };
 import tableStatus from '../database/tableStatus.json' assert { type: 'json' };
 // import { server } from '../server.js';
 
@@ -76,11 +77,11 @@ export const getOrder = tableID => {
  * @param {string} msg.realOrderId 购物车号
  * @param {Array<Object>} msg.orderList 订单列表
  */
-export const getOrderDetails = msg => {
-  const orderID = msg.orderID;
-  const realOrderId = msg.realOrderId;
-  const orderList = msg.orderList;
-};
+// export const getOrderDetails = msg => {
+//   const orderID = msg.orderID;
+//   const realOrderId = msg.realOrderId;
+//   const orderList = msg.orderList;
+// };
 
 /**
  * @description 记录ws会话状态
@@ -118,6 +119,7 @@ export const setWsStatus = (data, connections, socket) => {
  * @param {Array<Object>} orderList 点餐内容
  */
 export const addRealOrderDetails = (realOrderId, orderList) => {
+  // TODO: 需要先校验购物车号是否存在
   const totalPrice = calculateTotalPrice(orderList);
   realOrderDetails[realOrderId] = { totalPrice, orderList };
   console.log(realOrderDetails);
@@ -129,13 +131,10 @@ export const addRealOrderDetails = (realOrderId, orderList) => {
  * @return {number} 总价
  */
 export const calculateTotalPrice = orderList => {
-  let totalPrice = 0;
+  let totalPrice = new Decimal(0);
   orderList.forEach(item => {
-    menuData.forEach(food => {
-      if (food.foodID === item.foodID) {
-        totalPrice += food.foodPrice * item.total;
-      }
-    });
+    let price = new Decimal(menuData[item.foodID].foodPrice);
+    totalPrice = totalPrice.add(price.mul(item.count));
   });
-  return totalPrice;
+  return totalPrice.toFixed(2); // 保证返回的结果只有2位小数
 };
