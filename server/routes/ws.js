@@ -1,13 +1,6 @@
 // import { nanoid } from 'nanoid';
 import fastifyPlugin from 'fastify-plugin';
-import {
-  getMenu,
-  getSeatInfo,
-  getOrderDetails,
-  setWsStatus,
-  addRealOrderDetails,
-  realOrderDetails,
-} from '../utils/getData.js';
+import { getMenu, getSeatInfo, setWsStatus, addRealOrderDetails, realOrderDetails } from '../utils/getData.js';
 
 // 存储链接
 let connections = {};
@@ -17,25 +10,9 @@ const ws = async fastify => {
   fastify.get('/restaurant/ws', { websocket: true }, (socket, req) => {
     // 初始化桌号
     let tableID = null;
-    // const option = {
-    //   join: (data, connections, socket) => {
-    //     connections = { ...connections, ...setWsStatus(data, connections, tableID, socket) };
-    //   },
-    //   broadcast: (data, connections, socket) => {
-    //     connections[data.tableID].forEach(socket => {
-    //       // readyState 1 表示连接是打开的
-    //       if (socket.readyState === 1) {
-    //         socket.send(JSON.stringify(data));
-    //       }
-    //     });
-    //   },
-    // };
-
     socket.on('message', message => {
       // 处理接受到的消息
       const data = JSON.parse(message);
-      // 通过策略模式执行不同策略
-      // option[data.event](data, connections, socket);
       if (data.event === 'join') {
         // 1. 校验参数 - 判断桌号是否合法
         const tableIDNum = parseInt(data.tableID);
