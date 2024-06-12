@@ -18,6 +18,7 @@
   "author": "",
   "license": "AGPL-3.0-only",
   "dependencies": {
+    "@fastify/static": "^7.0.4",
     "@fastify/websocket": "^10.0.1",
     "decimal.js": "^10.4.3",
     "fastify": "^4.27.0",
