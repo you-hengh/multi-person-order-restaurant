@@ -1,0 +1,42 @@
+{
+  "gzYkiGkJG5cb7pxP33dJ5": {
+    "totalPrice": "43.98",
+    "orderList": {
+      "001": {
+        "total": "4",
+        "orderUser": [
+          { "seatNumber": "2号位", "count": 2 },
+          { "seatNumber": "3号位", "count": 2 }
+        ]
+      },
+      "002": {
+        "total": "6",
+        "orderUser": [
+          { "seatNumber": "1号位", "count": 1 },
+          { "seatNumber": "4号位", "count": 2 },
+          { "seatNumber": "5号位", "count": 3 }
+        ]
+      }
+    }
+  },
+  "JNKDLWIKLcb7pxP33dJ5": {
+    "totalPrice": "33.33",
+    "orderList": {
+      "001": {
+        "total": "3",
+        "orderUser": [
+          { "seatNumber": "1号位", "count": 1 },
+          { "seatNumber": "2号位", "count": 2 }
+        ]
+      },
+      "002": {
+        "total": "6",
+        "orderUser": [
+          { "seatNumber": "1号位", "count": 1 },
+          { "seatNumber": "2号位", "count": 2 },
+          { "seatNumber": "5号位", "count": 3 }
+        ]
+      }
+    }
+  }
+}
